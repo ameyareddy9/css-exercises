@@ -1,7 +1,14 @@
+
 body,
 html {
   height: 100%;
   margin: 0;
+
+  /* edit */
+  display: flex;
+  justify-content: center;
+  --hu: 24vw;
+  --vu: calc(var(--hu) / 3);
 }
 
 .container {
@@ -9,6 +16,20 @@ html {
   height: 100%;
   padding: 16px;
   box-sizing: border-box;
+
+  /* edit */
+  display: grid;
+
+  grid-template: 
+    var(--vu) 
+    var(--vu) 
+    calc(5 * var(--vu)) 
+    var(--vu) 
+    / 
+    var(--hu) 
+    calc(3 * var(--hu));
+
+  gap: 15px;
 }
 
 .container div {
@@ -22,10 +43,16 @@ html {
 
 .header {
   background-color: #006157;
+
+  /* edit */
+  grid-area: 1 / 1 / 2 / 3;
 }
 
 .sidebar {
   background-color: #005B94;
+
+  /* edit */
+  grid-area: 2 / 1 / 4 / 2;
 }
 
 .nav {
@@ -38,6 +65,7 @@ html {
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1 / -1;
 }
 
 .article p {
